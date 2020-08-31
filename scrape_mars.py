@@ -49,16 +49,18 @@ def scrape():
     soup = bs(html, "html.parser")
 
     relative_image_path = soup.find_all('img')[3]["src"]
-    featured_image_url = url + relative_image_path
+    newurl = "https://www.jpl.nasa.gov"
+    featured_image_url = newurl + relative_image_path
 # Mars Weather
 
     # Scrape page into Soup
     html = browser.html
     soup = bs(html, "html.parser")
 
-    results = soup.find('div', class_="css-1dbjc4n r-1iusvr4 r-16y2uox r-1777fci r-1mi0q7o")
-    results_nested = results.find_all('span', class_="css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0")
-    mars_weather = results_nested[4].text
+    # results = soup.find('div', class_="css-1dbjc4n r-1iusvr4 r-16y2uox r-1777fci r-1mi0q7o")
+    # results_nested = results.find_all('span', class_="css-901oao css-16my406 r-1qd0xha r-ad9z0x r-bcqeeo r-qvutc0")
+    # mars_weather = results_nested[4].text
+    mars_weather = None
 
 # Mars Facts
 
